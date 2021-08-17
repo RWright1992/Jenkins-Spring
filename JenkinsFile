@@ -1,0 +1,31 @@
+
+pipeline {
+    agent any
+    stages {
+	stage('Clone Repo') {
+            steps {
+                sh 'git clone https://github.com/ALowtonQA/Spring_Boot_Project.git'
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                sh 'ls'
+            }
+        }
+        stage('Test Report') {
+            steps {
+                sh 'ls'
+            }
+        }
+	stage('Build Jar') {
+            steps {
+                sh 'ls'
+            }
+        }
+        stage('Deploy') {
+            steps {
+      		sh 'ls'
+            }
+        }
+    }
+}
