@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'cd Spring_Boot_Project'
+                sh 'cd Spring_Boot_Project && ls'
 		sh 'ls'
             }
         }
