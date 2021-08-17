@@ -11,7 +11,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 sh 'cd Spring_Boot_Project && ls'
-		sh 'ls'
+		junit 'Spring_Boot_Project/src/test/java/com/qa/musichwa/controller/MusicControllerUnitTest.java'
             }
         }
         stage('Test Report') {
