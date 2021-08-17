@@ -5,6 +5,7 @@ pipeline {
 	stage('Clone Repo') {
             steps {
                 sh 'git clone https://github.com/ALowtonQA/Spring_Boot_Project.git'
+		sh 'cd Spring_Boot_Project'
             }
         }
         stage('Run Tests') {
