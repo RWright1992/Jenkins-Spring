@@ -10,8 +10,8 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                sh 'cd Spring_Boot_Project && mvn clean test'
-		junit 'Spring_Boot_Project/src/test/java/com/qa/musichwa/controller/MusicControllerUnitTest.java'
+                sh 'cd Spring_Boot_Project'
+		java 'org.junit.runner.JUnitCore com.qa.musichhwa.controller MusicControllerUnitTest'
             }
         }
         stage('Test Report') {
