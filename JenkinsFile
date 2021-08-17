@@ -4,7 +4,7 @@ pipeline {
     stages {
 	stage('Clone Repo') {
             steps {
-                sh 'git clone https://github.com/ALowtonQA/Spring_Boot_Project.git'
+                sh 'git fetch https://github.com/ALowtonQA/Spring_Boot_Project.git'
 		sh 'cd Spring_Boot_Project'
             }
         }
