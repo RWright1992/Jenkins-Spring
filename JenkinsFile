@@ -5,21 +5,22 @@ pipeline {
 	stage('Clone Repo') {
             steps {
                 sh 'git fetch https://github.com/ALowtonQA/Spring_Boot_Project.git'
-		sh 'cd Spring_Boot_Project && mvn clean compile'
+		sh 'cd Spring_Boot_Project && mvn clean package'
             }
         }
+		post{
+
+                always{
+                        junit '**/target/report/TEST-*.xml'
+                        }
+                }
+
         stage('Run Tests') {
             steps {
-                sh 'cd Spring_Boot_Project && mvn test'
+                sh 'cd Spring_Boot_Project &'
 
             }
-	    post{
-
-		always{
-			junit '**/target/report/TEST-*.xml'
-			}
-		}
-        }
+	}
         stage('Test Report') {
             steps {
                 sh 'ls'
