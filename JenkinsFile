@@ -5,20 +5,12 @@ pipeline {
 	stage('Clone Repo') {
             steps {
                 sh 'git fetch https://github.com/ALowtonQA/Spring_Boot_Project.git'
-		sh 'cd Spring_Boot_Project && mvn clean package'
             }
-		post{
-
-                always{
-                        junit '**/target/report/TEST-*.xml'
-                        }
-                }
-
-        }
+	}
 
         stage('Run Tests') {
             steps {
-                sh 'cd Spring_Boot_Project &'
+                sh 'cd Spring_Boot_Project && java -jar MusicHWA-0.0.1-SNAPSHOT.jar'
 
             }
 	}
